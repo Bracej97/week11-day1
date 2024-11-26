@@ -30,14 +30,21 @@ const App = () => {
 
   const deleteBlog = async (id) => {
     // TODO: Implement deleteBlog function
-    
-    
+    await fetch(`http://127.0.0.1:8000/blog/delete/${id}/`, {
+      method: 'DELETE'
+    });
+
     fetchBlogs();
   };
 
   const updateBlog = async (id, updatedBlog) => {
-
     // TODO: Implement updateBlog function
+    await fetch(`http://127.0.0.1:8000/blog/update/${id}/`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedBlog),
+    });
+
     fetchBlogs();
   };
 

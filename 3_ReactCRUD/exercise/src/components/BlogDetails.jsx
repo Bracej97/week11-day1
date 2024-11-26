@@ -6,7 +6,7 @@ const BlogDetails = ({ blog, updateBlog, clearDetails }) => {
   const [updatedText, setUpdatedText] = useState(blog.text);
 
   const handleUpdate = () => {
-    updateBlog(blog.id, { title: updatedTitle, text: updatedText });
+    updateBlog(blog.id, { title: updatedTitle, text: updatedText, author: 1 });
     setEditMode(false);
   };
 
